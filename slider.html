@@ -7,20 +7,16 @@
   <link rel="stylesheet" href="slider.css" />
 </head>
 <body>
-  <section class="slider-section">
-    <h2>✨ Smile Transformations at Dental Happiness Clinic</h2>
-    <div class="before-after-slider">
-      <div class="image-container">
-        <img src="before.png" alt="Before treatment" class="img-before" />
-        <div class="img-after-wrapper">
-          <img src="after.png" alt="After treatment" class="img-after" />
-        </div>
-        <input type="range" min="0" max="100" value="50" class="slider" id="slider" />
-        <span class="label before-label">Before</span>
-        <span class="label after-label">After</span>
+  <div class="slider-wrapper">
+    <h2>✨ Smile Makeover at Dental Happiness Clinic</h2>
+    <div class="ba-slider" id="ba-slider">
+      <img src="assets/before.png" alt="Before" class="before" />
+      <div class="resize">
+        <img src="assets/after.png" alt="After" />
       </div>
+      <div class="handle"></div>
     </div>
-  </section>
+  </div>
 
   <script src="slider.js"></script>
 </body>
