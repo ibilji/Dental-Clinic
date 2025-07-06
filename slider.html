@@ -1,71 +1,25 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f0f8ff;
-  color: #003366;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smile Makeover - Dental Happiness Clinic</title>
+  <link rel="stylesheet" href="slider.css" />
+</head>
+<body>
+  <div class="slider-wrapper">
+    <h2>✨ Smile Makeover at Dental Happiness Clinic</h2>
+    <div class="ba-slider" id="ba-slider">
+      <div class="ba-img before">
+        <img src="assets/before.png" alt="Before smile" />
+      </div>
+      <div class="ba-img after" id="after-img">
+        <img src="assets/after.png" alt="After smile" />
+      </div>
+      <div class="handle" id="slider-handle"></div>
+    </div>
+  </div>
 
-.slider-wrapper {
-  max-width: 800px;
-  margin: 50px auto;
-  text-align: center;
-  padding: 0 20px;
-}
-
-h2 {
-  margin-bottom: 30px;
-  color: #005ea2;
-}
-
-.ba-slider {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 94, 162, 0.15);
-  user-select: none;
-  cursor: ew-resize;
-}
-
-.ba-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.ba-img img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.after {
-  clip-path: inset(0 50% 0 0); /* Shows only left half initially */
-  transition: clip-path 0.1s ease;
-}
-
-.handle {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 4px;
-  height: 100%;
-  background: #007bff;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.handle::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #fff;
-  border: 2px solid #007bff;
-  transform: translate(-50%, -50%);
-  z-index: 15;
-}
+  <script src="slider.js"></script>
+</body>
+</html>
