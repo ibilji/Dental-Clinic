@@ -1,26 +1,26 @@
 const cards = [
   {
-    image: "images/haikyu.jpeg,
+    image: "images/haikyu.jpeg",
     text: "Denture is a removable replacement for missing teeth and surrounding tissues. We offer both complete and partial dentures."
   },
   {
-    image: "https://via.placeholder.com/300x200.png?text=Wisdom+Tooth+Extraction",
+    image: "images/haikyu.jpeg",
     text: "Say goodbye to wisdom tooth pain with a smooth & gentle extraction — quick, safe, and stress-free at our clinic!"
   },
   {
-    image: "https://via.placeholder.com/300x200.png?text=Implants",
+    image: "images/haikyu.jpeg",
     text: "Restore your smile with strong, natural-looking dental implants – the permanent solution to missing teeth!"
   },
   {
-    image: "https://via.placeholder.com/300x200.png?text=Full+Mouth+Rehabilitation",
+    image: "images/haikyu.jpeg",
     text: "Full Mouth Rehabilitation restores the function and aesthetics of your entire mouth through a comprehensive approach."
   },
   {
-    image: "https://via.placeholder.com/300x200.png?text=Root+Canal",
+    image: "images/haikyu.jpeg",
     text: "Save your natural tooth with a painless Root Canal Treatment — no fear, just relief, done in a single sitting by experts!"
   },
   {
-    image: "https://via.placeholder.com/300x200.png?text=Teeth+Whitening",
+    image: "images/haikyu.jpeg",
     text: "Get a Radiant Smile with Professional Teeth Whitening & Natural-Looking Composite Restorations."
   }
 ];
