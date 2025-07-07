@@ -1,6 +1,6 @@
 const cards = [
   {
-    image: "https://via.placeholder.com/300x200.png?text=Denture+Before+After",
+    image: "images/haikyu.jpeg,
     text: "Denture is a removable replacement for missing teeth and surrounding tissues. We offer both complete and partial dentures."
   },
   {
