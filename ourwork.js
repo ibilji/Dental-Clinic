@@ -26,8 +26,11 @@ const cards = [
 ];
 
 const container = document.getElementById("card-container");
+const modal = document.getElementById("slider-modal");
+const iframe = document.getElementById("slider-frame");
+const closeBtn = document.querySelector(".close-btn");
 
-cards.forEach(({ image, text }) => {
+cards.forEach(({ image, text }, index) => {
   const card = document.createElement("div");
   card.className = "card";
 
@@ -35,9 +38,32 @@ cards.forEach(({ image, text }) => {
     <img src="${image}" alt="Card Image" />
     <div class="card-content">
       <p>${text}</p>
-      <button onclick="location.href='slider.html'">Know More</button>
+      <button class="know-more-btn" data-index="${index}">Know More</button>
     </div>
   `;
 
   container.appendChild(card);
+});
+
+// Attach event listeners after cards are added
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".know-more-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      const index = button.getAttribute("data-index");
+      modal.style.display = "block";
+      iframe.src = `slider.html?index=${index}`;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    iframe.src = ""; // Stop slider content
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      iframe.src = "";
+    }
+  });
 });
