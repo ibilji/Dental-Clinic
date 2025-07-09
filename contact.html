@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Vedant Dental Clinic</title>
   <link rel="stylesheet" href="style.css">
+
   <style>
-    /* --- FOOTER STYLE --- */
     footer {
       background-color: #7049b5;
       color: white;
@@ -49,7 +49,6 @@
       font-size: 20px;
     }
 
-    /* Chat toggle button */
     .chat-toggle {
       position: fixed;
       bottom: 20px;
@@ -64,8 +63,6 @@
       font-size: 14px;
       z-index: 1000;
     }
-
-    /* Chatbot container loaded via script remains as is */
   </style>
 </head>
 <body>
@@ -102,13 +99,14 @@
   <!-- Chatbot Toggle Button -->
   <div class="chat-toggle" onclick="toggleChat()">Chat with us!</div>
 
-  <!-- Chatbot Placeholder for Dynamic Load -->
+  <!-- Chatbot Placeholder -->
   <div id="chatbot-placeholder"></div>
 
+  <!-- Dynamic Chatbot Loader -->
   <script>
     function toggleChat() {
-      const el = document.getElementById('chatContainer');
-      if (el) el.style.display = el.style.display === 'none' ? 'flex' : 'none';
+      const chat = document.getElementById('chatContainer');
+      if (chat) chat.style.display = chat.style.display === 'none' ? 'flex' : 'none';
     }
 
     fetch('chatbot/chatbot.html')
@@ -126,5 +124,18 @@
         document.body.appendChild(script);
       });
   </script>
+
 </body>
 </html>
+✅ chatbot/chatbot.html
+html
+Copy
+Edit
+<div class="chat-container" id="chatContainer" style="display: none;">
+  <div class="chat-header">💬 Chat with DentBot</div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Ask me anything..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
