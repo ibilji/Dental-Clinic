@@ -1,34 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Vedant Dental Clinic</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* --- FOOTER STYLE --- */
+    footer {
+      background-color: #7049b5;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-  <!-- 💙 Link chatbot styles -->
-  <link rel="stylesheet" href="chatbot/style.css" />
+    footer div {
+      flex: 1 1 300px;
+      margin: 10px;
+    }
+
+    footer h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    footer p, footer a {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #f3f3f3;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 13px;
+      color: #d0cfe1;
+      padding-top: 20px;
+    }
+
+    .emoji {
+      font-size: 20px;
+    }
+
+    /* Chat toggle button */
+    .chat-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #00c851, #007e33);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      z-index: 1000;
+    }
+
+    /* Chatbot container loaded via script remains as is */
+  </style>
 </head>
 <body>
-  <!-- 🏥 Your contact content -->
-  <div style="padding: 40px; font-family: sans-serif;">
-    <h1>Contact Us</h1>
-    <p>Call: +91 9766266551</p>
-    <p>Email: tejuhol92@gmail.com</p>
-    <p>Address: Kapil Upavan Plaza, Pune</p>
+
+  <!-- Main Footer Section -->
+  <footer>
+    <div>
+      <h2>Vedant Advanced Dental Clinic <br> And Implant Center</h2>
+      <p class="emoji">😃 Home To Your Family's Smile 😃</p>
+      <p><a href="#"><img src="instagram-icon.png" alt="Instagram" width="24"></a></p>
+    </div>
+
+    <div>
+      <h2>Contact Us</h2>
+      <p>Vedant Advanced Dental Clinic And Implant Center<br>
+         C, Kapil Upavan Plaza, 110, Lake Town Rd, opp. to Park Landmark,<br>
+         Kapil Upvan, Chaitraban, Mahalaxmi Nagar, Bibwewadi, Pune, Maharashtra 411037
+      </p>
+      <p>📞 +91 9766266551 / 8668406870</p>
+      <p>✉️ tejuhol92@gmail.com</p>
+    </div>
+
+    <div>
+      <h2>Opening Hours</h2>
+      <p>Monday - Saturday: <strong>9:00 AM - 9:00 PM</strong></p>
+      <p>Sunday: <strong>Upon request</strong></p>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    &copy; 2025 Vedant Advanced Dental Clinic And Implant Center. All rights reserved.
   </div>
 
-  <!-- 💬 Button to open chat -->
-  <div class="chat-toggle" onclick="toggleChat()">Book and Chat with us</div>
+  <!-- Chatbot Toggle Button -->
+  <div class="chat-toggle" onclick="toggleChat()">Chat with us!</div>
 
-  <!-- 🔄 Placeholder for chatbot -->
+  <!-- Chatbot Placeholder for Dynamic Load -->
   <div id="chatbot-placeholder"></div>
 
-  <!-- 🧠 Load chatbot HTML + JS -->
   <script>
+    function toggleChat() {
+      const el = document.getElementById('chatContainer');
+      if (el) el.style.display = el.style.display === 'none' ? 'flex' : 'none';
+    }
+
     fetch('chatbot/chatbot.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('chatbot-placeholder').innerHTML = html;
+
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'chatbot/style.css';
+        document.head.appendChild(link);
 
         const script = document.createElement('script');
         script.src = 'chatbot/script.js';
