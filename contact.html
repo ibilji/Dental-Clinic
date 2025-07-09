@@ -137,7 +137,7 @@
       if (el) el.style.display = el.style.display === 'none' ? 'flex' : 'none';
     }
 
-    fetch('index.html')
+    fetch('chatbot.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('chatbot-placeholder').innerHTML = html;
