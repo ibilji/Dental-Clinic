@@ -5,48 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Vedant Dental Clinic</title>
   <link rel="stylesheet" href="style.css">
-
   <style>
-    footer {
-      background-color: #7049b5;
-      color: white;
-      padding: 40px 20px;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
+    body {
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
     }
 
-    footer div {
-      flex: 1 1 300px;
-      margin: 10px;
+    .contact-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      background-color: #ffffff;
     }
 
-    footer h2 {
+    .contact-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #6a1b9a;
+      margin-bottom: 20px;
+    }
+
+    .contact-subtitle {
+      font-size: 18px;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #666;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .contact-card {
+      background-color: #e1bee7;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-card h2 {
       font-size: 22px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      color: #4a148c;
     }
 
-    footer p, footer a {
-      font-size: 15px;
+    .contact-card p, .contact-card a {
+      font-size: 16px;
       line-height: 1.6;
-      color: #f3f3f3;
+      color: #333;
       text-decoration: none;
     }
 
-    footer a:hover {
+    .contact-card a:hover {
       text-decoration: underline;
     }
 
     .footer-bottom {
       text-align: center;
-      font-size: 13px;
-      color: #d0cfe1;
-      padding-top: 20px;
-    }
-
-    .emoji {
-      font-size: 20px;
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 60px;
+      padding: 20px;
     }
 
     .chat-toggle {
@@ -67,30 +93,33 @@
 </head>
 <body>
 
-  <!-- Main Footer Section -->
-  <footer>
-    <div>
-      <h2>Vedant Advanced Dental Clinic <br> And Implant Center</h2>
-      <p class="emoji">😃 Home To Your Family's Smile 😃</p>
-      <p><a href="#"><img src="instagram-icon.png" alt="Instagram" width="24"></a></p>
-    </div>
+  <section class="contact-section">
+    <div class="contact-title">Vedant Advanced Dental Clinic And Implant Center</div>
+    <div class="contact-subtitle">😃 Home To Your Family's Smile 😃</div>
 
-    <div>
-      <h2>Contact Us</h2>
-      <p>Vedant Advanced Dental Clinic And Implant Center<br>
-         C, Kapil Upavan Plaza, 110, Lake Town Rd, opp. to Park Landmark,<br>
-         Kapil Upvan, Chaitraban, Mahalaxmi Nagar, Bibwewadi, Pune, Maharashtra 411037
-      </p>
-      <p>📞 +91 9766266551 / 8668406870</p>
-      <p>✉️ tejuhol92@gmail.com</p>
-    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h2>Contact Us</h2>
+        <p>Vedant Advanced Dental Clinic And Implant Center<br>
+          C, Kapil Upavan Plaza, 110, Lake Town Rd, opp. to Park Landmark,<br>
+          Kapil Upvan, Chaitraban, Mahalaxmi Nagar, Bibwewadi, Pune, Maharashtra 411037
+        </p>
+        <p>📞 +91 9766266551 / 8668406870</p>
+        <p>✉️ tejuhol92@gmail.com</p>
+      </div>
 
-    <div>
-      <h2>Opening Hours</h2>
-      <p>Monday - Saturday: <strong>9:00 AM - 9:00 PM</strong></p>
-      <p>Sunday: <strong>Upon request</strong></p>
+      <div class="contact-card">
+        <h2>Opening Hours</h2>
+        <p>Monday - Saturday: <strong>9:00 AM - 9:00 PM</strong></p>
+        <p>Sunday: <strong>Upon request</strong></p>
+      </div>
+
+      <div class="contact-card">
+        <h2>Follow Us</h2>
+        <p><a href="#"><img src="instagram-icon.png" alt="Instagram" width="24"> Instagram</a></p>
+      </div>
     </div>
-  </footer>
+  </section>
 
   <div class="footer-bottom">
     &copy; 2025 Vedant Advanced Dental Clinic And Implant Center. All rights reserved.
@@ -99,14 +128,13 @@
   <!-- Chatbot Toggle Button -->
   <div class="chat-toggle" onclick="toggleChat()">Chat with us!</div>
 
-  <!-- Chatbot Placeholder -->
+  <!-- Chatbot Placeholder for Dynamic Load -->
   <div id="chatbot-placeholder"></div>
 
-  <!-- Dynamic Chatbot Loader -->
   <script>
     function toggleChat() {
-      const chat = document.getElementById('chatContainer');
-      if (chat) chat.style.display = chat.style.display === 'none' ? 'flex' : 'none';
+      const el = document.getElementById('chatContainer');
+      if (el) el.style.display = el.style.display === 'none' ? 'flex' : 'none';
     }
 
     fetch('index.html')
@@ -124,18 +152,5 @@
         document.body.appendChild(script);
       });
   </script>
-
 </body>
 </html>
-✅ chatbot/chatbot.html
-html
-Copy
-Edit
-<div class="chat-container" id="chatContainer" style="display: none;">
-  <div class="chat-header">💬 Chat with DentBot</div>
-  <div class="chat-messages" id="chatMessages"></div>
-  <div class="chat-input">
-    <input type="text" id="userInput" placeholder="Ask me anything..." />
-    <button onclick="sendMessage()">Send</button>
-  </div>
-</div>
