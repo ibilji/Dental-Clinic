@@ -3,54 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vedant Dental Clinic</title>
+  <title>Contact - Vedant Dental Clinic</title>
 
-  <!-- Link to Contact CSS -->
-  <link rel="stylesheet" href="contact.css" />
+  <!-- 💙 Link chatbot styles -->
+  <link rel="stylesheet" href="chatbot/style.css" />
 </head>
 <body>
+  <!-- 🏥 Your contact content -->
+  <div style="padding: 40px; font-family: sans-serif;">
+    <h1>Contact Us</h1>
+    <p>Call: +91 9766266551</p>
+    <p>Email: tejuhol92@gmail.com</p>
+    <p>Address: Kapil Upavan Plaza, Pune</p>
+  </div>
 
-  <!-- Your page content above here -->
+  <!-- 💬 Button to open chat -->
+  <div class="chat-toggle" onclick="toggleChat()">Book and Chat with us</div>
 
-  <!-- Contact / Footer Section -->
-  <footer class="contact-footer">
-    <div class="footer-container">
-      <!-- Clinic Info -->
-      <div class="footer-column">
-        <h2>Vedant Advanced Dental Clinic<br>And Implant Center</h2>
-        <p class="tagline">😃 Home To Your Family's Smile 😃</p>
-        <div class="social-icons">
-          <a href="#" target="_blank">
-            <img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new--v1.png" alt="Instagram" />
-          </a>
-        </div>
-      </div>
+  <!-- 🔄 Placeholder for chatbot -->
+  <div id="chatbot-placeholder"></div>
 
-      <!-- Contact Details -->
-      <div class="footer-column">
-        <h3>Contact Us</h3>
-        <p>
-          📍 Vedant Advanced Dental Clinic And Implant Center<br>
-          C, Kapil Upavan Plaza, 110, Lake Town Rd, opp. to Park Landmark,<br>
-          Kapil Upvan, Chaitraban, Mahalakshmi Nagar, Bibwewadi,<br>
-          Pune, Maharashtra 411037
-        </p>
-        <p>📞 +91 9766266551 / 8668406870</p>
-        <p>📧 tejuhol92@gmail.com</p>
-      </div>
+  <!-- 🧠 Load chatbot HTML + JS -->
+  <script>
+    fetch('chatbot/chatbot.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('chatbot-placeholder').innerHTML = html;
 
-      <!-- Opening Hours -->
-      <div class="footer-column">
-        <h3>Opening Hours</h3>
-        <p>🕘 Monday – Saturday: 9:00 AM – 9:00 PM</p>
-        <p>🕘 Sunday: Upon request</p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      © 2025 Vedant Advanced Dental Clinic And Implant Center. All rights reserved.
-    </div>
-  </footer>
-
+        const script = document.createElement('script');
+        script.src = 'chatbot/script.js';
+        document.body.appendChild(script);
+      });
+  </script>
 </body>
 </html>
