@@ -23,7 +23,6 @@ window.addEventListener("mousemove", (e) => {
 
   const percentage = (x / rect.width) * 100;
 
-  // ✅ Update after-image clip and handle position
   afterImg.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
   handle.style.left = `${percentage}%`;
 });
