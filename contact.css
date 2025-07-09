@@ -1,0 +1,59 @@
+.contact-footer {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 60px 20px 30px;
+  font-family: 'Segoe UI', sans-serif;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-column h2, .footer-column h3 {
+  margin-bottom: 16px;
+}
+
+.footer-column p {
+  margin: 10px 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.tagline {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: -10px;
+}
+
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 6px;
+  transition: 0.3s ease;
+}
+
+.social-icons img:hover {
+  background-color: #e1306c;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 40px;
+  opacity: 0.8;
+}
