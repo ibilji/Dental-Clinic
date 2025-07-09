@@ -45,7 +45,6 @@ cards.forEach(({ image, text }, index) => {
   container.appendChild(card);
 });
 
-// Attach event listeners after cards are added
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".know-more-btn").forEach(button => {
     button.addEventListener("click", () => {
@@ -57,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
-    iframe.src = ""; // Stop slider content
+    iframe.src = "";
   });
 
   window.addEventListener("click", (e) => {
