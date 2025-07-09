@@ -1,3 +1,27 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f5ff;
+}
+
+.slider-wrapper {
+  width: 100%;
+  height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #110080;
+  text-align: center;
+}
+
 .ba-slider {
   position: relative;
   overflow: hidden;
@@ -5,7 +29,9 @@
   box-shadow: 0 8px 25px rgba(0, 94, 162, 0.15);
   user-select: none;
   cursor: ew-resize;
-  aspect-ratio: 16 / 9; /* keep proportion consistent */
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
 }
 
 .ba-img {
@@ -23,10 +49,9 @@
   display: block;
 }
 
-/* NEW: bring 'after' image above */
 .after {
   z-index: 2;
-  clip-path: inset(0 50% 0 0); /* show only left half of after */
+  clip-path: inset(0 50% 0 0);
   transition: clip-path 0.1s ease;
 }
 
